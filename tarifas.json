@@ -1,0 +1,971 @@
+{
+  "metadata": {
+    "version": "2026-09",
+    "moneda": "ARS",
+    "descripcion": "Base de datos unificada de costos sugeridos de mano de obra eléctrica (AAIERIC Septiembre 2026 y Grupo Electro)",
+    "notas_generales": [
+      "Los valores corresponden exclusivamente a mano de obra (sin materiales).",
+      "No incluyen impuestos, viáticos, personal adicional ni cargas sociales.",
+      "1 Boca equivale a una caja estándar con extensión máxima de cañería de 5 metros entre sí.",
+      "Deben aplicarse las reglamentaciones AEA vigentes y materiales certificados IRAM/IEC."
+    ]
+  },
+  "aaieric": {
+    "referencia": "AAIERIC - Septiembre 2026 (CABA y GBA)",
+    "valores_base": [
+      {
+        "item": "Visita: Inspección Ocular, Evaluación, Diagnóstico, Asesoramiento y Presupuesto",
+        "unidad": "visita",
+        "precio": 56393
+      },
+      {
+        "item": "Urgencia: Lunes a Sábado a partir 20:00 hs / Domingo y Feriado (mínimo)",
+        "unidad": "servicio",
+        "precio": 135198
+      },
+      {
+        "item": "Emergencia/Urgencia Lun. a Sáb. 8 a 20 hs (Atención inmediata)",
+        "unidad": "servicio",
+        "precio": 112590
+      },
+      {
+        "item": "Unidad básica de cotización: 1 boca completa",
+        "unidad": "boca",
+        "precio": 112590
+      },
+      {
+        "item": "Service - Instalación (mínimo)",
+        "unidad": "servicio",
+        "precio": 112590
+      },
+      {
+        "item": "Hora de Trabajo (mínimo)",
+        "unidad": "hora",
+        "precio": 56393
+      },
+      {
+        "item": "Hora de Trabajo (promedio)",
+        "unidad": "hora",
+        "precio": 56393
+      }
+    ],
+    "canalizacion": [
+      {
+        "item": "Canalización en losa con caño metálico",
+        "unidad": "boca",
+        "precio": 57000
+      },
+      {
+        "item": "Canalización en loseta con caño metálico",
+        "unidad": "boca",
+        "precio": 59848
+      },
+      {
+        "item": "Amurado de cañería en mampostería - Ladrillo común",
+        "unidad": "boca",
+        "precio": 64775
+      },
+      {
+        "item": "Amurado de cañería en mampostería - Ladrillo hueco",
+        "unidad": "boca",
+        "precio": 63236
+      },
+      {
+        "item": "Amurado de cañería en mampostería - Ladrillo común",
+        "unidad": "metro",
+        "precio": 15481
+      },
+      {
+        "item": "Amurado de cañería en mampostería - Ladrillo hueco",
+        "unidad": "metro",
+        "precio": 15179
+      },
+      {
+        "item": "Amurado de cañería a la vista (Metal, PVC, Cablecanal 14x30)",
+        "unidad": "boca",
+        "precio": 51774
+      },
+      {
+        "item": "Pase de viga y/o columna",
+        "unidad": "boca",
+        "precio": 60119
+      },
+      {
+        "item": "Cable subterráneo Tierra (cada 5m)",
+        "unidad": "boca",
+        "precio": 56341
+      },
+      {
+        "item": "Cable subterráneo Piso (cada 5m)",
+        "unidad": "boca",
+        "precio": 60119
+      },
+      {
+        "item": "Adicional caja de paso subterránea Tierra",
+        "unidad": "unidad",
+        "precio": 61873
+      },
+      {
+        "item": "Adicional caja de paso subterránea Piso",
+        "unidad": "unidad",
+        "precio": 66069
+      }
+    ],
+    "cableado": [
+      {
+        "item": "Cableado en obra nueva - Opción 1 (Canalización realizada por el profesional)",
+        "unidad": "boca",
+        "precio": 27703
+      },
+      {
+        "item": "Cableado en obra nueva - Opción 2 (Canalización realizada por otro profesional)",
+        "unidad": "boca",
+        "precio": 38574
+      },
+      {
+        "item": "Recableado con artefactos (sin vicios ocultos)",
+        "unidad": "boca",
+        "precio": 57844
+      },
+      {
+        "item": "Recableado sin artefactos (sin vicios ocultos)",
+        "unidad": "boca",
+        "precio": 38574
+      }
+    ],
+    "conexion_puntos_tomas": [
+      {
+        "item": "Punto, toma simple, portalámpara",
+        "unidad": "boca",
+        "precio": 20106
+      },
+      {
+        "item": "Toma doble",
+        "unidad": "boca",
+        "precio": 25466
+      },
+      {
+        "item": "Punto Combinación",
+        "unidad": "boca",
+        "precio": 21641
+      }
+    ],
+    "tableros": [
+      {
+        "item": "Tablero Principal Monofásico con 1 ID y 1 TM + PAT",
+        "unidad": "unidad",
+        "precio": 332597
+      },
+      {
+        "item": "Solo PAT (Puesta a tierra)",
+        "unidad": "unidad",
+        "precio": 168822
+      },
+      {
+        "item": "Tablero Principal Trifásico con 1 ID y 1 TM + PAT",
+        "unidad": "unidad",
+        "precio": 450399
+      },
+      {
+        "item": "ID, ITM u otro módulo bipolar adicional",
+        "unidad": "unidad",
+        "precio": 81775
+      },
+      {
+        "item": "ID tetrapolar",
+        "unidad": "unidad",
+        "precio": 140781
+      },
+      {
+        "item": "ITM tetrapolar",
+        "unidad": "unidad",
+        "precio": 140781
+      },
+      {
+        "item": "ITM tripolar",
+        "unidad": "unidad",
+        "precio": 118769
+      },
+      {
+        "item": "Tablero Seccional hasta 8 polos",
+        "unidad": "unidad",
+        "precio": 236385
+      },
+      {
+        "item": "Tablero Seccional de 8 a 36 polos",
+        "unidad": "unidad",
+        "precio": 945654
+      },
+      {
+        "item": "Tablero Seccional de 36 a 54 polos",
+        "unidad": "unidad",
+        "precio": 1418416
+      }
+    ],
+    "artefactos_iluminacion": [
+      {
+        "item": "Artefacto aplique simple",
+        "unidad": "unidad",
+        "precio": 30855
+      },
+      {
+        "item": "Spot Led por unidad",
+        "unidad": "unidad",
+        "precio": 30855
+      },
+      {
+        "item": "Artefacto colgante liviano 3 luces 1 efecto",
+        "unidad": "unidad",
+        "precio": 61711
+      },
+      {
+        "item": "Artefacto colgante liviano 5 luces 1 efecto",
+        "unidad": "unidad",
+        "precio": 81750
+      },
+      {
+        "item": "Artefacto colgante - Adicional por efecto",
+        "unidad": "efecto",
+        "precio": 20106
+      },
+      {
+        "item": "Artefacto colgante pesado - Mínimo",
+        "unidad": "unidad",
+        "precio": 107967
+      },
+      {
+        "item": "Equipo de tubo Led simple de 7W a 36W",
+        "unidad": "unidad",
+        "precio": 61711
+      },
+      {
+        "item": "Equipo de tubo Led doble de 7W a 36W",
+        "unidad": "unidad",
+        "precio": 75965
+      },
+      {
+        "item": "Equipo de tubo Led 45W",
+        "unidad": "unidad",
+        "precio": 77170
+      },
+      {
+        "item": "Equipo de tubo Led doble 45W",
+        "unidad": "unidad",
+        "precio": 95763
+      },
+      {
+        "item": "Ventilador de techo",
+        "unidad": "unidad",
+        "precio": 112590
+      },
+      {
+        "item": "Ventilador de techo con luminaria 1 efecto",
+        "unidad": "unidad",
+        "precio": 140781
+      }
+    ],
+    "acometida": [
+      {
+        "item": "Gabinete 1 Medidor Monofásico (amurado + conexión + PAT servicio)",
+        "unidad": "unidad",
+        "precio": 236385
+      },
+      {
+        "item": "Gabinete 2 Medidores Monofásicos",
+        "unidad": "unidad",
+        "precio": 337820
+      },
+      {
+        "item": "Gabinete 3 Medidores Monofásicos (incl. Caja de Toma 63A)",
+        "unidad": "unidad",
+        "precio": 788103
+      },
+      {
+        "item": "Gabinete 4 Medidores Monofásicos (incl. Caja de Toma 63A)",
+        "unidad": "unidad",
+        "precio": 900679
+      },
+      {
+        "item": "PAT de Servicio (jabalina + caja de inspección)",
+        "unidad": "unidad",
+        "precio": 168822
+      },
+      {
+        "item": "Pilar completo (Gabinete, TP, Caño y PAT)",
+        "unidad": "unidad",
+        "precio": 928767
+      },
+      {
+        "item": "Caño de acometida (amurado y conexión)",
+        "unidad": "unidad",
+        "precio": 236385
+      },
+      {
+        "item": "Caja de Toma (Fusilera NH 00)",
+        "unidad": "unidad",
+        "precio": 337820
+      },
+      {
+        "item": "Agregado de un gabinete de medidor + TP",
+        "unidad": "unidad",
+        "precio": 337820
+      }
+    ],
+    "automatismos_y_otros": [
+      {
+        "item": "Contactores",
+        "unidad": "unidad",
+        "precio": 140781
+      },
+      {
+        "item": "Sensores (agregar costo de cableado)",
+        "unidad": "unidad",
+        "precio": 123850
+      },
+      {
+        "item": "Corrección Factor de Potencia Monofásico",
+        "unidad": "kVA",
+        "precio": 146277
+      },
+      {
+        "item": "Grupos Electrógenos Monofásicos hasta 3,5kVA (adicional a instalación)",
+        "unidad": "unidad",
+        "precio": 281522
+      }
+    ],
+    "bandejas_portacables": [
+      {
+        "item": "Bandeja hasta 150mm - Metro lineal (H < 3m)",
+        "unidad": "metro",
+        "precio": 13668
+      },
+      {
+        "item": "Bandeja hasta 150mm - Metro lineal (H > 3m)",
+        "unidad": "metro",
+        "precio": 17097
+      },
+      {
+        "item": "Bandeja hasta 150mm - Accesorio Curva/Unión T (H < 3m)",
+        "unidad": "unidad",
+        "precio": 18251
+      },
+      {
+        "item": "Bandeja hasta 150mm - Accesorio Curva/Unión T (H > 3m)",
+        "unidad": "unidad",
+        "precio": 21591
+      },
+      {
+        "item": "Bandeja hasta 150mm - Otros accesorios (H < 3m)",
+        "unidad": "unidad",
+        "precio": 9130
+      },
+      {
+        "item": "Bandeja hasta 150mm - Otros accesorios (H > 3m)",
+        "unidad": "unidad",
+        "precio": 26234
+      },
+      {
+        "item": "Bandeja 200/300mm - Metro lineal (H < 3m)",
+        "unidad": "metro",
+        "precio": 20490
+      },
+      {
+        "item": "Bandeja 200/300mm - Metro lineal (H > 3m)",
+        "unidad": "metro",
+        "precio": 17545
+      },
+      {
+        "item": "Bandeja 200/300mm - Accesorio Curva/Unión T (H < 3m)",
+        "unidad": "unidad",
+        "precio": 27366
+      },
+      {
+        "item": "Bandeja 200/300mm - Accesorio Curva/Unión T (H > 3m)",
+        "unidad": "unidad",
+        "precio": 26426
+      },
+      {
+        "item": "Bandeja 200/300mm - Otros accesorios (H < 3m)",
+        "unidad": "unidad",
+        "precio": 13668
+      },
+      {
+        "item": "Bandeja 200/300mm - Otros accesorios (H > 3m)",
+        "unidad": "unidad",
+        "precio": 35247
+      },
+      {
+        "item": "Bandeja 450/600mm - Metro lineal (H < 3m)",
+        "unidad": "metro",
+        "precio": 28014
+      },
+      {
+        "item": "Bandeja 450/600mm - Metro lineal (H > 3m)",
+        "unidad": "metro",
+        "precio": 24482
+      },
+      {
+        "item": "Bandeja 450/600mm - Accesorio Curva/Unión T (H < 3m)",
+        "unidad": "unidad",
+        "precio": 40936
+      },
+      {
+        "item": "Bandeja 450/600mm - Accesorio Curva/Unión T (H > 3m)",
+        "unidad": "unidad",
+        "precio": 36586
+      },
+      {
+        "item": "Bandeja 450/600mm - Otros accesorios (H < 3m)",
+        "unidad": "unidad",
+        "precio": 17804
+      },
+      {
+        "item": "Bandeja 450/600mm - Otros accesorios (H > 3m)",
+        "unidad": "unidad",
+        "precio": 48821
+      }
+    ],
+    "documentacion_y_certificados": [
+      {
+        "item": "Proyecto Eléctrico por m2 (mínimo 30m2)",
+        "unidad": "m2",
+        "precio": 16510,
+        "minimo_total": 573357
+      },
+      {
+        "item": "Plano Eléctrico por m2 (mínimo 30m2)",
+        "unidad": "m2",
+        "precio": 15243,
+        "minimo_total": 684122
+      },
+      {
+        "item": "Plano Eléctrico - Adicional por boca",
+        "unidad": "boca",
+        "precio": 13189
+      },
+      {
+        "item": "Plano Eléctrico - Adicional por tablero",
+        "unidad": "unidad",
+        "precio": 33682
+      },
+      {
+        "item": "Plano Eléctrico - Adicional por acometida",
+        "unidad": "unidad",
+        "precio": 33682
+      },
+      {
+        "item": "Lista de materiales (mínimo para 30m2)",
+        "unidad": "unidad",
+        "precio": 67479
+      },
+      {
+        "item": "Certificado DCI - CAIE T1 Residencial / Comercial Monofásico",
+        "unidad": "unidad",
+        "precio": 453632
+      },
+      {
+        "item": "Certificado DCI - CAIE T1 Residencial / Comercial Trifásico",
+        "unidad": "unidad",
+        "precio": 620827
+      },
+      {
+        "item": "Certificado DCI - CAIE T2 / T3 (base)",
+        "unidad": "unidad",
+        "precio": 32996
+      },
+      {
+        "item": "Protocolo puesta a tierra SRT 900/15 (Residencial/Comercial/Industrial)",
+        "unidad": "unidad",
+        "precio": 660471
+      }
+    ],
+    "jornales_8hs": [
+      {
+        "categoria": "Oficial Especializado",
+        "jornal_8hs": 51413
+      },
+      {
+        "categoria": "Oficial Electricista",
+        "jornal_8hs": 43979
+      },
+      {
+        "categoria": "Medio Oficial Electricista",
+        "jornal_8hs": 40641
+      },
+      {
+        "categoria": "Ayudante",
+        "jornal_8hs": 37409
+      }
+    ]
+  },
+  "grupo_electro": {
+    "referencia": "Grupo Electro - Encuesta Nacional Monotributistas",
+    "caneria_mas_cableado": [
+      {
+        "item": "Cañería metálica embutida 3/4 (1 a 50 bocas)",
+        "unidad": "boca",
+        "precio": 96900
+      },
+      {
+        "item": "Cañería metálica embutida 3/4 (51 a 100 bocas)",
+        "unidad": "boca",
+        "precio": 94400
+      },
+      {
+        "item": "Cañería metálica embutida 3/4 (101 a 500 bocas)",
+        "unidad": "boca",
+        "precio": 92800
+      },
+      {
+        "item": "Cañería metálica a la vista 3/4 (1 a 50 bocas)",
+        "unidad": "boca",
+        "precio": 94200
+      },
+      {
+        "item": "Cañería plástica embutida 3/4 (1 a 50 bocas)",
+        "unidad": "boca",
+        "precio": 95700
+      },
+      {
+        "item": "Cañería plástica a la vista 3/4 (1 a 50 bocas)",
+        "unidad": "boca",
+        "precio": 93000
+      },
+      {
+        "item": "Bandeja portacables perforada por metro (1 a 50 m)",
+        "unidad": "metro",
+        "precio": 76700
+      }
+    ],
+    "canalizacion_sola": [
+      {
+        "item": "Canalización embutida metálica (1 a 50 bocas)",
+        "unidad": "boca",
+        "precio": 59000
+      },
+      {
+        "item": "Canalización embutida PVC (1 a 50 bocas)",
+        "unidad": "boca",
+        "precio": 57800
+      },
+      {
+        "item": "Canalización a la vista metálica (1 a 50 bocas)",
+        "unidad": "boca",
+        "precio": 56300
+      },
+      {
+        "item": "Canalización a la vista PVC (1 a 50 bocas)",
+        "unidad": "boca",
+        "precio": 55100
+      },
+      {
+        "item": "Cañería metálica 3/4 en Durlock (1 a 50 bocas)",
+        "unidad": "boca",
+        "precio": 49100,
+        "tiempo_estimado": "1h 45m"
+      },
+      {
+        "item": "Cañería PVC rígido 3/4 en Durlock (1 a 50 bocas)",
+        "unidad": "boca",
+        "precio": 44700,
+        "tiempo_estimado": "1h 45m"
+      }
+    ],
+    "cableado_solo": [
+      {
+        "item": "Cableado en cañería metálica embutida (1 a 50 bocas)",
+        "unidad": "boca",
+        "precio": 37900,
+        "tiempo_estimado": "1h 50m"
+      },
+      {
+        "item": "Cableado en cañería metálica a la vista (1 a 50 bocas)",
+        "unidad": "boca",
+        "precio": 37400,
+        "tiempo_estimado": "1h 50m"
+      },
+      {
+        "item": "Cableado en cañería plástica embutida (1 a 50 bocas)",
+        "unidad": "boca",
+        "precio": 38000,
+        "tiempo_estimado": "1h 50m"
+      },
+      {
+        "item": "Cableado en cañería plástica a la vista (1 a 50 bocas)",
+        "unidad": "boca",
+        "precio": 37500,
+        "tiempo_estimado": "1h 50m"
+      },
+      {
+        "item": "Recableado de instalación preexistente (1 a 50 bocas)",
+        "unidad": "boca",
+        "precio": 46900,
+        "tiempo_estimado": "2h 30m"
+      },
+      {
+        "item": "Cableado en bandeja portacable hasta 150mm",
+        "unidad": "metro",
+        "precio": 11700
+      },
+      {
+        "item": "Cableado en bandeja portacable 200/300mm",
+        "unidad": "metro",
+        "precio": 12500
+      },
+      {
+        "item": "Cableado en bandeja portacable 450/600mm",
+        "unidad": "metro",
+        "precio": 13200
+      }
+    ],
+    "subterraneo_por_metro": [
+      {
+        "item": "Cable subterráneo 1x4 a 4x16 mm2 (incl. zanjeo 70cm, arena, malla)",
+        "unidad": "metro",
+        "precio": 24200
+      },
+      {
+        "item": "Cable subterráneo 1x25 a 4x35 mm2",
+        "unidad": "metro",
+        "precio": 48600
+      },
+      {
+        "item": "Cable subterráneo 1x35 a 4x70 mm2",
+        "unidad": "metro",
+        "precio": 87000
+      },
+      {
+        "item": "Cable subterráneo mayores 1x95 mm2",
+        "unidad": "metro",
+        "precio": 115800
+      }
+    ],
+    "tableros_y_puesta_a_tierra": [
+      {
+        "item": "Fijación de gabinete de superficie (1 a 54 bocas)",
+        "unidad": "unidad",
+        "precio": 52200
+      },
+      {
+        "item": "Empotrado de gabinete en mampostería (1 a 24 bocas)",
+        "unidad": "unidad",
+        "precio": 220000
+      },
+      {
+        "item": "Empotrado de gabinete en mampostería (25 a 54 bocas)",
+        "unidad": "unidad",
+        "precio": 250600
+      },
+      {
+        "item": "Colocación de termomagnética y diferencial - Circuito monofásico",
+        "unidad": "unidad",
+        "precio": 97200
+      },
+      {
+        "item": "Colocación de termomagnética y diferencial - Circuito trifásico",
+        "unidad": "unidad",
+        "precio": 128100
+      },
+      {
+        "item": "Hincado de jabalina 1,5m + caja de inspección + conexión",
+        "unidad": "unidad",
+        "precio": 112300
+      }
+    ],
+    "acometida_y_medidores": [
+      {
+        "item": "Acometida monofásica hasta 3m (hasta 10kW)",
+        "unidad": "unidad",
+        "precio": 239400
+      },
+      {
+        "item": "Acometida trifásica hasta 10kW",
+        "unidad": "unidad",
+        "precio": 341600
+      },
+      {
+        "item": "Acometida trifásica 11 a 35kW",
+        "unidad": "unidad",
+        "precio": 443300
+      },
+      {
+        "item": "Acometida trifásica 36 a 50kW",
+        "unidad": "unidad",
+        "precio": 647200
+      },
+      {
+        "item": "Instalación 1 medidor monofásico completo",
+        "unidad": "unidad",
+        "precio": 192200
+      },
+      {
+        "item": "Instalación 1 medidor trifásico completo",
+        "unidad": "unidad",
+        "precio": 218300
+      },
+      {
+        "item": "Caja de toma entrada aérea",
+        "unidad": "unidad",
+        "precio": 674300
+      },
+      {
+        "item": "Caja de toma entrada subterránea",
+        "unidad": "unidad",
+        "precio": 451500
+      },
+      {
+        "item": "Armado de pilar monofásico completo",
+        "unidad": "unidad",
+        "precio": 865500
+      },
+      {
+        "item": "Armado de pilar trifásico completo",
+        "unidad": "unidad",
+        "precio": 1022100
+      }
+    ],
+    "cctv": [
+      {
+        "item": "Cámara CCTV en superficie",
+        "unidad": "unidad",
+        "precio": 95200
+      },
+      {
+        "item": "Cámara CCTV con canalización (incl. 5m)",
+        "unidad": "unidad",
+        "precio": 136600
+      },
+      {
+        "item": "DVR/BCR 3 cámaras en superficie",
+        "unidad": "sistema",
+        "precio": 332200
+      },
+      {
+        "item": "DVR/BCR 6 cámaras en superficie",
+        "unidad": "sistema",
+        "precio": 447100
+      }
+    ],
+    "artefactos_y_luminarias": [
+      {
+        "item": "Extractor de aire en baño",
+        "unidad": "unidad",
+        "precio": 175700,
+        "tiempo_estimado": "2h 00m"
+      },
+      {
+        "item": "Extractor de aire en cocina",
+        "unidad": "unidad",
+        "precio": 249000,
+        "tiempo_estimado": "3h 00m"
+      },
+      {
+        "item": "Extractor de aire en cocina 240mm",
+        "unidad": "unidad",
+        "precio": 352200,
+        "tiempo_estimado": "4h 00m"
+      },
+      {
+        "item": "Campana tipo spar",
+        "unidad": "unidad",
+        "precio": 162600,
+        "tiempo_estimado": "1h 30m"
+      },
+      {
+        "item": "Ventilador de techo sin luces",
+        "unidad": "unidad",
+        "precio": 107100,
+        "tiempo_estimado": "1h 30m"
+      },
+      {
+        "item": "Ventilador de techo con luces",
+        "unidad": "unidad",
+        "precio": 137400,
+        "tiempo_estimado": "1h 30m"
+      },
+      {
+        "item": "Aplique de 1 a 2 luces",
+        "unidad": "unidad",
+        "precio": 32700,
+        "tiempo_estimado": "0h 30m"
+      },
+      {
+        "item": "Aplique de 3 a 5 luces",
+        "unidad": "unidad",
+        "precio": 36200,
+        "tiempo_estimado": "0h 45m"
+      },
+      {
+        "item": "Colgante de 1 luz",
+        "unidad": "unidad",
+        "precio": 52900,
+        "tiempo_estimado": "1h 00m"
+      },
+      {
+        "item": "Colgante de 2 luces",
+        "unidad": "unidad",
+        "precio": 56700,
+        "tiempo_estimado": "1h 30m"
+      },
+      {
+        "item": "Farola de pared 1 luz con fotocélula",
+        "unidad": "unidad",
+        "precio": 58100,
+        "tiempo_estimado": "1h 00m"
+      },
+      {
+        "item": "Farola de pared 2 luces con fotocélula",
+        "unidad": "unidad",
+        "precio": 61900,
+        "tiempo_estimado": "1h 30m"
+      },
+      {
+        "item": "Artefacto de tubo LED simple",
+        "unidad": "unidad",
+        "precio": 60700,
+        "tiempo_estimado": "1h 00m"
+      },
+      {
+        "item": "Artefacto de 2 tubos LED",
+        "unidad": "unidad",
+        "precio": 73600,
+        "tiempo_estimado": "1h 30m"
+      },
+      {
+        "item": "Luz de emergencia",
+        "unidad": "unidad",
+        "precio": 47700,
+        "tiempo_estimado": "1h 00m"
+      },
+      {
+        "item": "Brazo de alumbrado público",
+        "unidad": "unidad",
+        "precio": 204300,
+        "tiempo_estimado": "3h 00m"
+      }
+    ],
+    "correccion_factor_potencia": [
+      {
+        "item": "Tablero monofásico hasta 2 kVAr",
+        "unidad": "unidad",
+        "precio": 316200
+      },
+      {
+        "item": "Tablero trifásico hasta 10 kVAr",
+        "unidad": "unidad",
+        "precio": 356800
+      },
+      {
+        "item": "Tablero trifásico hasta 20 kVAr",
+        "unidad": "unidad",
+        "precio": 411500
+      },
+      {
+        "item": "Tablero trifásico con contactor hasta 10 kVAr",
+        "unidad": "unidad",
+        "precio": 504200
+      },
+      {
+        "item": "Tablero trifásico con contactor hasta 20 kVAr",
+        "unidad": "unidad",
+        "precio": 608400
+      },
+      {
+        "item": "Tablero trifásico automático hasta 50 kVAr (6 pasos)",
+        "unidad": "unidad",
+        "precio": 608400
+      },
+      {
+        "item": "Tablero trifásico automático hasta 100 kVAr (6 pasos)",
+        "unidad": "unidad",
+        "precio": 701000
+      },
+      {
+        "item": "Tablero trifásico automático hasta 150 kVAr (6 pasos)",
+        "unidad": "unidad",
+        "precio": 1345700
+      }
+    ],
+    "emergencias_mantenimiento": [
+      {
+        "item": "Emergencia Lun a Vie hasta 5 km",
+        "unidad": "servicio",
+        "precio": 74400,
+        "tiempo_estimado": "4h 00m"
+      },
+      {
+        "item": "Emergencia Lun a Vie hasta 10 km",
+        "unidad": "servicio",
+        "precio": 87600,
+        "tiempo_estimado": "4h 30m"
+      },
+      {
+        "item": "Emergencia Lun a Vie hasta 20 km",
+        "unidad": "servicio",
+        "precio": 105700,
+        "tiempo_estimado": "5h 00m"
+      },
+      {
+        "item": "Hora adicional emergencia Lun a Vie",
+        "unidad": "hora",
+        "precio": 28200
+      },
+      {
+        "item": "Emergencia Sáb, Dom y Feriados hasta 5 km",
+        "unidad": "servicio",
+        "precio": 103800,
+        "tiempo_estimado": "4h 00m"
+      },
+      {
+        "item": "Emergencia Sáb, Dom y Feriados hasta 10 km",
+        "unidad": "servicio",
+        "precio": 131000,
+        "tiempo_estimado": "4h 30m"
+      },
+      {
+        "item": "Emergencia Sáb, Dom y Feriados hasta 20 km",
+        "unidad": "servicio",
+        "precio": 162900,
+        "tiempo_estimado": "5h 00m"
+      },
+      {
+        "item": "Hora adicional emergencia Sáb, Dom y Feriados",
+        "unidad": "hora",
+        "precio": 28700
+      }
+    ],
+    "uocra_hora_relacion_dependencia": {
+      "zona_a": {
+        "oficial_especializado": 8352,
+        "oficial": 6801,
+        "medio_oficial": 6028,
+        "ayudante": 5523
+      },
+      "zona_b": {
+        "oficial_especializado": 9267,
+        "oficial": 7542,
+        "medio_oficial": 6685,
+        "ayudante": 6130
+      },
+      "zona_c": {
+        "oficial_especializado": 12861,
+        "oficial": 11426,
+        "medio_oficial": 10609,
+        "ayudante": 10218
+      },
+      "zona_c_austral": {
+        "oficial_especializado": 16703,
+        "oficial": 13603,
+        "medio_oficial": 12056,
+        "ayudante": 11047
+      }
+    }
+  },
+  "reglas_calculo_ia": [
+    "Si la tarea no figura literalmente, descomponerla en: fijación/canalización + cableado + montaje de módulos/protecciones + conexión.",
+    "Usar el valor de Hora de Trabajo (AR$ 56.393) para tareas de taller, diagnóstico, montaje de accesorios especiales (ej. distribuidores, relés) o ajustes.",
+    "Aplicar +30% en zanjeo subterráneo por suelos duros y +80% si requiere rotura de pisos.",
+    "Para trabajos en altura (> 3m) sin ítem específico, aplicar un recargo orientativo del 20% al 25%.",
+    "Aclarar siempre que los valores son solo de mano de obra y no incluyen materiales, viáticos ni impuestos."
+  ]
+}
