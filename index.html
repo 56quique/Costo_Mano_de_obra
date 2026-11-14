@@ -446,6 +446,80 @@ Responde ÚNICAMENTE con un objeto JSON válido (sin markdown, sin bloques de c�
     texto += `\n*TOTAL: ${document.getElementById('totalText').textContent}*\n\n_Notas:_\n` + currentNotes.map(n => `- ${n}`).join('\n');
     navigator.clipboard.writeText(texto).then(() => alert('¡Copiado al portapapeles para WhatsApp!'));
   }
+  // Poner fecha de hoy por defecto al cargar la página
+  window.addEventListener('DOMContentLoaded', () => {
+    const hoy = new Date().toISOString().split('T')[0];
+    const inputFecha = document.getElementById('fechaPresupuesto');
+    if(inputFecha) inputFecha.value = hoy;
+    
+    // Agregamos una fila vacía de ejemplo al iniciar
+    agregarFilaFinal('Mano de obra general de instalación', 1, 0);
+  });
+
+  // Función para sumar renglones a la tarjeta limpia
+  function agregarFilaFinal(desc = '', cant = 1, precio = 0) {
+    const tbody = document.getElementById('cuerpoFinalCliente');
+    const tr = document.createElement('tr');
+    tr.style.borderBottom = "1px solid #f1f5f9";
+    tr.innerHTML = `
+      <td style="padding: 0.3rem;"><input class="item-input" type="text" value="${desc}" placeholder="Descripción de la tarea..." style="width:100%; border:1px solid #cbd5e1; padding:0.25rem; border-radius:3px; font-size:0.8rem;" oninput="recalcularFinalCliente()" /></td>
+      <td class="num" style="padding: 0.3rem;"><input class="item-input qty-input" type="number" step="0.5" value="${cant}" style="width:100%; border:1px solid #cbd5e1; padding:0.25rem; border-radius:3px; font-size:0.8rem; text-align:right;" oninput="recalcularFinalCliente()" /></td>
+      <td class="num" style="padding: 0.3rem;"><input class="item-input price-input" type="number" step="100" value="${precio}" style="width:100%; border:1px solid #cbd5e1; padding:0.25rem; border-radius:3px; font-size:0.8rem; text-align:right;" oninput="recalcularFinalCliente()" /></td>
+      <td class="num subtotal-celda" style="padding: 0.3rem; font-size:0.85rem;"><strong>$ 0</strong></td>
+      <td style="padding: 0.3rem; text-align:center;"><button class="btn-icon" style="color:var(--danger); border:none; background:none; cursor:pointer; font-weight:bold;" onclick="this.closest('tr').remove(); recalcularFinalCliente();">✕</button></td>
+    `;
+    tbody.appendChild(tr);
+    recalcularFinalCliente();
+  }
+
+  // Recalcular subtotales y total general automáticamente
+  function recalcularFinalCliente() {
+    const filas = document.querySelectorAll('#cuerpoFinalCliente tr');
+    let totalGeneral = 0;
+
+    filas.forEach(tr => {
+      const cant = parseFloat(tr.querySelector('.qty-input').value) || 0;
+      const precio = parseFloat(tr.querySelector('.price-input').value) || 0;
+      const sub = cant * precio;
+      totalGeneral += sub;
+      tr.querySelector('.subtotal-celda').textContent = formatMoney(sub);
+    });
+
+    document.getElementById('totalFinalCliente').textContent = formatMoney(totalGeneral);
+  }
+
+  // Copiar tarjeta prolija para WhatsApp
+  function copiarPresupuestoLimpio() {
+    const cliente = document.getElementById('clienteNombre').value || 'Cliente';
+    const fecha = document.getElementById('fechaPresupuesto').value || '';
+    const obs = document.getElementById('obsPresupuesto').value;
+    const filas = document.querySelectorAll('#cuerpoFinalCliente tr');
+    
+    let texto = `*PRESUPUESTO DE MANO DE OBRA*\n`;
+    texto += `📅 Fecha: ${fecha}\n`;
+    texto += `👤 Cliente: ${cliente}\n\n`;
+    texto += `*Detalle de Trabajos:*\n`;
+    
+    let totalGeneral = 0;
+    filas.forEach((tr, i) => {
+      const desc = tr.querySelector('input[type="text"]').value;
+      const cant = parseFloat(tr.querySelector('.qty-input').value) || 0;
+      const precio = parseFloat(tr.querySelector('.price-input').value) || 0;
+      const sub = cant * precio;
+      totalGeneral += sub;
+      if(desc) {
+        texto += `${i + 1}. *${desc}*\n   Cant: ${cant} | Unit: ${formatMoney(precio)} | Subtotal: *${formatMoney(sub)}*\n`;
+      }
+    });
+
+    texto += `\n*TOTAL GENERAL: ${formatMoney(totalGeneral)}*\n`;
+    if(obs) {
+      texto += `\n_Observaciones:_\n${obs}`;
+    }
+
+    navigator.clipboard.writeText(texto).then(() => alert('¡Presupuesto copiado para enviar por WhatsApp!'));
+  }
+
 </script>
 
 </body>
