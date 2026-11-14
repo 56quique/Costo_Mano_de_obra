@@ -52,6 +52,31 @@
     .notes-list li { margin-left: 1.2rem; margin-bottom: 0.25rem; }
     .hidden { display: none !important; }
     .loader { text-align: center; padding: 1.5rem; color: var(--primary); font-weight: 600; }
+  /* Estilos para la tarjeta tipo factura/presupuesto e impresión limpia */
+  #printArea input, #printArea textarea {
+    background: transparent;
+  }
+  @media print {
+    body * {
+      visibility: hidden;
+    }
+    #printArea, #printArea * {
+      visibility: visible;
+    }
+    #printArea {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      border: none !important;
+      box-shadow: none !important;
+      background: #ffffff !important;
+    }
+    #botonesAccionPresupuesto {
+      display: none !important;
+    }
+  }
+
   </style>
 </head>
 <body>
