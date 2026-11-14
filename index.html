@@ -177,6 +177,78 @@
   </div>
 
 </div>
+  <!-- TARJETA FORMATO PRESUPUESTO / FACTURA X -->
+  <div class="card" style="border: 2px solid var(--primary); margin-top: 1rem; background: #ffffff; color: #0f172a;" id="printArea">
+    
+    <!-- ENCABEZADO -->
+    <div style="display: flex; justify-content: space-between; border-bottom: 2px solid #e2e8f0; padding-bottom: 1rem; margin-bottom: 1rem;">
+      <div>
+        <h2 style="margin: 0; font-size: 1.25rem; color: #0f172a;">⚡ SERVICIOS ELÉCTRICOS</h2>
+        <p style="margin: 0.2rem 0; font-size: 0.8rem; color: #64748b;">Instalaciones, Tableros y Mantenimiento Industrial</p>
+        <p style="margin: 0; font-size: 0.75rem; color: #64748b;">Matriculado / Argentina</p>
+      </div>
+      <div style="text-align: right;">
+        <div style="background: #0f172a; color: #fff; padding: 0.2rem 0.6rem; font-weight: bold; font-size: 0.9rem; border-radius: 4px; display: inline-block; margin-bottom: 0.3rem;">PRESUPUESTO</div>
+        <p style="margin: 0; font-size: 0.8rem; color: #64748b;">Fecha: <input type="date" id="fechaPresupuesto" style="border:none; font-size:0.8rem; font-family:inherit; color:#64748b;" /></p>
+        <p style="margin: 0; font-size: 0.8rem; color: #64748b;">N°: 0001-00000000</p>
+      </div>
+    </div>
+
+    <!-- DATOS DEL CLIENTE -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 1rem; background: #f8fafc; padding: 0.75rem; border-radius: 6px;">
+      <div>
+        <label style="font-size: 0.7rem; color: #64748b; display: block;">CLIENTE / RAZÓN SOCIAL:</label>
+        <input type="text" id="clienteNombre" placeholder="Nombre del cliente o empresa" style="width:100%; border:1px solid #cbd5e1; padding:0.3rem; border-radius:4px; font-size:0.85rem;" />
+      </div>
+      <div>
+        <label style="font-size: 0.7rem; color: #64748b; display: block;">DOMICILIO / LUGAR DE OBRA:</label>
+        <input type="text" id="clienteDireccion" placeholder="Dirección de la obra" style="width:100%; border:1px solid #cbd5e1; padding:0.3rem; border-radius:4px; font-size:0.85rem;" />
+      </div>
+    </div>
+
+    <!-- TABLA DE ITEMS -->
+    <div class="card-title" style="color: #0f172a; display:flex; justify-content:space-between; align-items:center;">
+      <span style="font-size: 0.95rem;">Detalle de Trabajos</span>
+      <button class="btn-icon" onclick="agregarFilaFinal()" style="background:#0f172a; color:#fff; border:none; padding:0.3rem 0.6rem; border-radius:4px; font-size:0.75rem; cursor:pointer;">+ Agregar Renglón</button>
+    </div>
+
+    <div style="overflow-x:auto;">
+      <table id="tablaFinalCliente" style="width:100%; border-collapse: collapse;">
+        <thead>
+          <tr style="border-bottom: 1px solid #cbd5e1; text-align: left; font-size: 0.8rem; color: #475569;">
+            <th style="padding: 0.4rem;">Descripción</th>
+            <th class="num" style="width: 60px; padding: 0.4rem;">Cant.</th>
+            <th class="num" style="width: 100px; padding: 0.4rem;">Unitario ($)</th>
+            <th class="num" style="width: 100px; padding: 0.4rem;">Subtotal ($)</th>
+            <th style="width: 30px;"></th>
+          </tr>
+        </thead>
+        <tbody id="cuerpoFinalCliente">
+          <!-- Aquí se cargan los renglones -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- TOTALES Y NOTAS -->
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 1rem; border-top: 2px solid #e2e8f0; padding-top: 0.75rem;">
+      <div style="width: 50%;">
+        <label style="font-size: 0.7rem; color: #64748b; display: block;">OBSERVACIONES / CONDICIONES:</label>
+        <textarea id="obsPresupuesto" placeholder="Validez de la oferta, formas de pago..." style="width:100%; border:1px solid #cbd5e1; padding:0.4rem; border-radius:4px; font-size:0.8rem; height:50px; resize:none;"></textarea>
+      </div>
+      <div style="text-align: right; width: 45%;">
+        <div style="font-size: 1.1rem; font-weight: bold; color: #0f172a; background: #f1f5f9; padding: 0.5rem; border-radius: 4px;">
+          TOTAL: <span id="totalFinalCliente">$ 0</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTONES DE ACCIÓN -->
+    <div class="actions-bar" style="margin-top: 1rem; display: flex; gap: 0.5rem;" id="botonesAccionPresupuesto">
+      <button class="btn-secondary btn-whatsapp" onclick="copiarPresupuestoLimpio()" style="flex:1; cursor:pointer;">📋 Copiar para WhatsApp</button>
+      <button class="btn-secondary" onclick="window.print()" style="flex:1; cursor:pointer;">🖨️ Imprimir / Guardar PDF</button>
+    </div>
+  </div>
+
 
 <script>
   // BASE DE DATOS EMBUTIDA (Sin problemas de carga local en celular)
