@@ -75,7 +75,23 @@
     #botonesAccionPresupuesto {
       display: none !important;
     }
+  }  /* Forzar visibilidad y color correcto en la tarjeta de presupuesto */
+  #printArea input, 
+  #printArea textarea, 
+  #printArea select {
+    color: #0f172a !important;
+    background-color: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    opacity: 1 !important;
   }
+  
+  /* Asegurar que se vea el texto de placeholder */
+  #printArea input::placeholder, 
+  #printArea textarea::placeholder {
+    color: #94a3b8 !important;
+    opacity: 1 !important;
+  }
+
 
   </style>
 </head>
